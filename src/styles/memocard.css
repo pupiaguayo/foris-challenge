@@ -1,0 +1,71 @@
+.memocard {
+  height: 16.25em;
+  width: 13.25em;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.memocard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 16px;
+}
+
+.memocard:hover .memocard-inner {
+  transform: rotateY(180deg);
+}
+
+.memocard-front,
+.memocard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Memocard FRONT Styles */
+.memocard-front {
+  background-color: #ffff;
+  color: #233a59;
+  border-radius: 8px;
+}
+.memocard-front > p {
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 0px;
+  width: 85%;
+  text-align: start;
+  margin: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.memocard-front > span {
+  font-weight: 400;
+  font-size: 0.625em;
+  line-height: 12px;
+  align-content: flex-start;
+  float: left;
+  margin-left: 8%;
+}
+.memocard-front > img {
+  object-fit: contain;
+  height: 70%;
+  padding: 12px 0 5px 0;
+  border-radius: 15px;
+}
+
+/* Memocard Back Styles */
+.memocard-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a2f2f9;
+  transform: rotateY(180deg);
+  border-radius: 8px;
+}
