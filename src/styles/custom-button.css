@@ -25,13 +25,24 @@ button:hover {
   background: #a2f2f9;
   border-color: #d8e054;
 }
+.repeat:hover {
+  background: #49d5e1;
+}
 .init {
   background: #d8e054;
   border-color: #a2f2f9;
+}
+
+.init:hover {
+  background: #b1b83b;
 }
 .play {
   margin-top: 1.875em;
   width: 240px;
   background: #a2f2f9;
   border-color: #d8e054;
+}
+
+.play:hover {
+  background: #49d5e1;
 }

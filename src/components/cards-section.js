@@ -9,7 +9,7 @@ export const CardsSection = () => {
   const handleClick = () => navigate("/game");
   return (
     <div className="cards-section cards-home">
-      <p className="home-title">Personajes</p>
+      <h2 className="home-title">Personajes</h2>
       <CardsContainer />
       <CustomButton classButton="play" data="Jugar" onClick={handleClick} />
     </div>
