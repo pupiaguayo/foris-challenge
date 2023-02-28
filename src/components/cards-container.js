@@ -12,13 +12,11 @@ export const CardsContainer = () => {
     randomCharacters,
     animating,
     handleMemocardClick,
-    getRandomCharacters,
     getCharacters,
   } = useContext(CharactersContext);
 
   useEffect(() => {
     getCharacters();
-    getRandomCharacters();
   }, []);
   
   return (

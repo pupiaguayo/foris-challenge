@@ -12,9 +12,10 @@ import CharactersContext from "./characters-context";
 import CharactersReducer from "./characters-reducer";
 
 export const CharactersState = (props) => {
+  const storedBlogs = JSON.parse(localStorage.getItem('arrayShufledCards'))
   const initialState = {
     charactersList: [],
-    randomCharacters: [],
+    randomCharacters: storedBlogs || [],
     selectedMemocard: null,
     animating: false,
     success: 0,
@@ -52,6 +53,7 @@ export const CharactersState = (props) => {
     dispatch({ type: GET_SHIFTS, payload: 0 });
     dispatch({ type: GET_SUCCESS, payload: 0 });
     dispatch({ type: GET_RANDOM_CHARACTERS, payload: shufledMemocards });
+    localStorage.setItem("arrayShufledCards", JSON.stringify(shufledMemocards));
   };
 
   const handleMemocardClick = (memoBlock) => {
