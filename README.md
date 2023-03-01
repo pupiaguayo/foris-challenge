@@ -1,70 +1,73 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Foris Frontend Challenge
 
-## Available Scripts
+RickAndMory Memotest
 
-In the project directory, you can run:
+## Authors
 
-### `npm start`
+- [@pupiaguayo](https://www.github.com/pupiaguayo)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  
+## Deployment
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To deploy this project run
 
-### `npm test`
+```bash
+  npm run build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    
+## Tech Stack
 
-### `npm run build`
+React, Javascript, CSS, Firebase (hosting)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  
+## Support
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For support, email rdarioaguayo@gmail.com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  
+## Run Locally
 
-### `npm run eject`
+Clone the project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+  git clone https://github.com/pupiaguayo/foris-challenge
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Go to the project directory
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  cd foris-challenge
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install dependencies
 
-## Learn More
+```bash
+  npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start the server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm run start
+```
+## Step to step (Spanish)
 
-### Code Splitting
+1er etapa: 
+- Detección de componentes a crear utilizando el diseño proporcionado en Figma. Con esto pude establecer la necesidad de contar con varios componentes (Por ej: Header, Cards, Custom-button, etc ) y 2 vistas (Home y Game View).
+- Tomando lo mencionado sobre configuración de rutas he decidido utilizar React Router
+- Por cuanto a las imágenes decidí utilizarlas en formato SVG para un mejor rendimiento de la web
+- Para manejo de estados he decidido utilizar Context, lo considere la mejor opción teniendo en cuenta el tiempo limite de desarrollo(7 días como máximo) y el tipo de proyecto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2da etapa: 
 
-### Analyzing the Bundle Size
+Creación de los componentes mencionados, implementación de estilos y vistas. En este punto hubo un caso como por ejemplo el del Button en el que decidí crear un solo componente con diferentes estilos que serian usados según el componente donde se necesite insertar dicho botón. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Se necesito obtener 6 personajes, brindados por la API de Rick and Morty, e insertarlos duplicados en un array para luego pasar a la etapa del juego. Para el juego utilice una función (shuffleArray) que los ordenaba aleatoriamente para que luego el usuario pueda realizar la búsqueda de personajes que coincidan.
 
-### Making a Progressive Web App
+En caso de coincidencia, en vez de hacerlas desaparecer, considere mejor opción la de dejar dichas cartas con los personajes a la vista e incrementar el contador de aciertos. En caso de no contar con coincidencia, luego de 1 segundo volvían a girar. Otra decision que tome respecto al diseño fue que el Subtitulo “Personajes” se encuentre centrado ya que a mi parecer quedaba mejor visualmente ya que el resto de los elementos tambien se encontraban centrados
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Una vez llegados a los 6 aciertos posibles se mostraba la vista de Finalización junto con el numero de turnos utilzados y la posibilidad de dirigirnos a la home o reiniciar el juego. 
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Responsive: El diseño principal tal como fue solicitado cuenta con 3 filas y 4 columnas, luego como en Figma no solicitaba un diseño responsive obligatorio, decidí que las cartas se muestren de a 2 o 3 por fila (según resoluciones).  
